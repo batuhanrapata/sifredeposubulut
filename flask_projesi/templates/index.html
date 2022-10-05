@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Anasayfa</title>
+</head>
+<style>
+     input {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 2px solid grey;
+      border-radius: 4px;
+      font-family: "DejaVu Sans Mono", Times, serif;
+      }
+      p, a {
+       font-family: "DejaVu Sans Mono", Times, serif;
+         text-decoration: underline;
+      }
+      h1{
+       font-family: "DejaVu Sans Mono", Times, serif;
+      }
+      .center {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border: 5px solid grey;
+        padding: 50px;
+        }
+
+</style>
+<body>
+<div style="text-align: center"  class="center" >
+    <h1>ŞİFRE YÖNETİCİSİ ANASAYFA</h1>
+    <H2>HOŞGELDİNİZ</H2>
+    <p>ŞİFRELERİNİZİ KAYIT EDİP SAKLAMAK İÇİN OLUŞTURULMUŞ BULUT TABANLI BİR DEPOLAMA SİSTEMİ</p>
+    <a href="{{url_for('login')}}">Giriş Yapmak İçin Tıklayın</a>
+    <a href="{{url_for('signup')}}">Hesap Oluşturmak İçin Tıklayınız</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giriş Ekranı</title>
+</head>
+<style>
+     input {
+      width: 50%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 2px solid grey;
+      border-radius: 4px;
+      font-family: "DejaVu Sans Mono", Times, serif;
+      }
+      p, a {
+       font-family: "DejaVu Sans Mono", Times, serif;
+      }
+      h1{
+       font-family: "DejaVu Sans Mono", Times, serif;
+      }
+
+</style>
+<body>
+<div style="text-align:center; margin-top: 15%; " >
+<h1>Şifre Yöneticisi Sistemi Şifremi Unuttum</h1>
+<form action="" method="post">
+    <P>Mail Adresi:<input type="text" name="mail" style="margin-left: auto;"></P>
+    <input type="submit" value="Şifremi Yenile" style="margin-left: auto;">
+    <p><a href="{{url_for('login')}}">Giriş Ekranı.</a>
+</form>
+    <p>{{gonderildi}}</p>
+</div>
+</body>
+</html>

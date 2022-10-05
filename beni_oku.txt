@@ -1,0 +1,4 @@
+projenin linki: https://sifre-yoneticisi-349313.ew.r.appspot.com/
+proje google cloud üzerinde çalışmaktadır
+projenin kodlarının üzerinde virtual env dosyası boyutu sebebiyle yüklenmemiştir
+lokal olarak çalıştırmadan önce requirements.txt dosyasının içindeki kütüphaneler yüklü olmalıdır

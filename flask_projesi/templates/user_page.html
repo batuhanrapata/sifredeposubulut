@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Kullanıcı Ekranı</title>
+   </head>
+   <style>
+      table, th, td {
+      border: 1px #DDD solid;
+      padding: 5px;
+      cursor: pointer;
+      font-family: "DejaVu Sans Mono", Times, serif;
+      }
+      input {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 2px solid grey;
+      border-radius: 4px;
+      font-family: "DejaVu Sans Mono", Times, serif;
+      }
+      p, a {
+      font-family: "DejaVu Sans Mono", Times, serif;
+      }
+      h1{
+      font-family: "DejaVu Sans Mono", Times, serif;
+      }
+      .center {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      }
+      .trow
+      {
+      transition: transform .2s;
+      }
+      .trow:hover {
+      cursor:pointer;
+      transform: scale(1.03);
+      background:black;
+      color:green;
+      }
+      .myDiv {
+      border: 5px outset Green;
+      background-color: White;
+      text-align: center;
+      }
+   </style>
+   <body>
+      <div class="myDiv">
+         <h1 style="text-align: center;">ŞİFRE YÖNETİCİSİ</h1>
+      </div>
+      <div >
+         <p>Kullancı Adresi: {{mail}}<a href="{{url_for('sign_out')}}" style="float: right;"> Çıkış Yapmak İçin Tıklayın.</a></p>
+         <a href="{{url_for('delete')}}" > Hesabınızı Silmek İçin Tıklayın.</a>
+         <div style="float: right;" class="center">
+            <form method="post" style="text-align: center;">
+               <p>Site Adı<input type="text" name="site" value="{{site}}"></p>
+               <p>Kullanıcı Adı<input type="text" name="kadi" value="{{kadi}}"></p>
+               <p>Şifre<input type="password" name="pass" value="{{password}}" id="pass"> <br><input type="checkbox" onclick="myFunction()">Şifreyi Göster</p>
+               <p><input type="submit" name="kayit" value="Ekle"> </p>
+               <br>
+               <input type="submit" name="kayit" value="Şifre Oluştur">
+            </form>
+         </div>
+         <p>{{kayit}}</p>
+         <p>{{hata}}</p>
+         <br><br><br>
+         <form method="post" style="width: 20%" >
+            <p style="text-align:center;">Silmek İstediğiniz Sitenin Adını Yazınız</p>
+            <input id="siteadi" name="site">
+            <input type="submit" name="kayit" value="Sil">
+         </form>
+            <div style="float: left; text-align:center;">
+               <table style="width:100%" id="table" onclick="table()" >
+                  <tr >
+                     <th>Kullanıcı Adı</th>
+                     <th>Şifre</th>
+                     <th>Site</th>
+                  </tr >
+                  {% for row in data %}
+                  <tr class="trow">
+                     {% for cell in row %}
+                     <td>{{cell}}</td>
+                     {% endfor %}
+                     <td><input type="button" id="" class="btn btn-default" name="dynamic" value="Göster"></td>
+                  </tr>
+                  {% endfor %}
+               </table>
+            </div>
+
+      </div>
+      <script>
+         function myFunction() {
+         var x = document.getElementById("pass");
+           if (x.type === "password") {
+           x.type = "text";
+           } else {
+            x.type = "password";
+           }
+         }
+         function table(){
+         var cells = document.querySelectorAll("#table td");
+         for (var i = 0; i < cells.length; i++) {
+         cells[i].addEventListener("click", function() {
+         document.getElementById("siteadi").value=(this.innerHTML);
+           });
+          }
+         }
+      </script>
+   </body>
+</html>
